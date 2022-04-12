@@ -93,7 +93,7 @@ const main = function() {
         matrix : gl.getUniformLocation(program, `matrix`)
     };
     
-    const { mat4, mat3, vec3 } = glMatrix;
+    const { mat4 } = glMatrix;
 
     const matrix = mat4.create();
 
@@ -102,14 +102,31 @@ const main = function() {
     gl.uniformMatrix4fv(uniformLocation.matrix, false, matrix); 
     gl.drawArrays(gl.TRIANGLES, 0, 3);
 
+    let button1 = document.getElementById('button1');
+    let button2 = document.getElementById('button2');
+    let button3 = document.getElementById('button3');
+
+    let animation;
+
+    function rotateleft(){
+        mat4.rotateZ(matrix, matrix, Math.PI/180);
+    }
+    function rotateright(){
+        mat4.rotateZ(matrix, matrix, Math.PI/-180);
+    }
+
+    let rotation = 180;
     function animate(){
-        requestAnimationFrame(animate);
+        animation = requestAnimationFrame(animate);
         gl.clearColor(0.85, 1, 0.95, 1.0)
         gl.clear(gl.DEPTH_BUFFER_BIT | gl.COLOR_BUFFER_BIT);
-        mat4.rotateZ(matrix, matrix, Math.PI/180);
+        mat4.rotateZ(matrix, matrix, Math.PI/rotation);
         gl.uniformMatrix4fv(uniformLocation.matrix, false, matrix);   
         gl.drawArrays(gl.TRIANGLES, 0, 3);
     }
-    animate(); 
+    
+    button1.addEventListener("click", () => {cancelAnimationFrame(animation); rotation = 180; animate();});
+    button2.addEventListener("click", () => {cancelAnimationFrame(animation);});
+    button3.addEventListener("click", () => {cancelAnimationFrame(animation); rotation = -180; animate();});
 }
 main();
