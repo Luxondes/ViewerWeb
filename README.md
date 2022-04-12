@@ -16,6 +16,7 @@
   - ~/webGL
   - https://github.com/sessamekesh/IndigoCS-webgl-tutorials
   - https://www.youtube.com/playlist?list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK
+  - https://glmatrix.net/docs/
 
 ---
 
