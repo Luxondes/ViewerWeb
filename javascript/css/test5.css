@@ -1,0 +1,11 @@
+#ask-hello {
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+#hello-result {
+  text-align: center;
+  font-size: 24px;
+}
