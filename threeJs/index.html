@@ -7,8 +7,12 @@
 			body { margin: 0; }
 		</style>
 	</head>
-	<body>
-		<script src="js/three.js"></script>
+	<body>    
+		<script type="importmap">
+			{
+				"imports": { "three": "https://unpkg.com/three/build/three.module.js" }
+			}
+		</script>
         <script src="myThreeTest.js"></script>	
 	</body>
 </html>
