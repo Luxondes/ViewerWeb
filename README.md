@@ -14,13 +14,13 @@
 
 - Cube Web.GL :
 
-  - ~/webGL
+  - ~/autoformation/webGL
   - https://github.com/sessamekesh/IndigoCS-webgl-tutorials
   - https://www.youtube.com/playlist?list=PL2935W76vRNHFpPUuqmLoGCzwx_8eq5yK
   - https://glmatrix.net/docs/
 
 - Node.js
-  - ~/nodeJs
+  - ~/autoformation/nodeJs
   - https://openclassrooms.com/fr/courses/5543061-ecrivez-du-javascript-pour-le-web
   - https://openclassrooms.com/fr/courses/6390246-passez-au-full-stack-avec-node-js-express-et-mongodb
 
@@ -30,11 +30,16 @@
 
 - Three.js
 
-  - ~/threeJs
+  - ~/viewer
   - https://github.com/mrdoob/three.js
   - https://threejs.org/docs/
   - https://jsfiddle.net/7u84j6kp/
 
 - Cube + OrbitControl
-  - ~/threeJs
+
+  - ~/viewer
   - https://jsfiddle.net/JulienGelles/gv9ob6ep/13/
+
+- Plan imagé + Gestion caméra
+  - ~/viewer
+  - https://jsfiddle.net/JulienGelles/gv9ob6ep/97/
