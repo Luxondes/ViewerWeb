@@ -32,19 +32,16 @@
 
 - Three.js :
 
-  - ~/viewer
   - https://github.com/mrdoob/three.js
   - https://threejs.org/docs/
   - https://jsfiddle.net/7u84j6kp/
 
 - Cube + OrbitControl :
 
-  - ~/viewer
   - https://jsfiddle.net/JulienGelles/gv9ob6ep/13/
 
 - Plan imagé + Gestion caméra :
 
-  - ~/viewer
   - https://jsfiddle.net/JulienGelles/gv9ob6ep/97/
 
 ### Semaine du 25/04 au 29/04:
@@ -52,3 +49,9 @@
 - Node.js ; serveur local + ajustements :
 
   - ~/web-server
+
+- drag & drop system :
+
+  - ~/drag&drop
+  - https://www.youtube.com/watch?v=aa18QsK5QZI&t=186s
+  - https://www.youtube.com/watch?v=6pc9G2ahUuc

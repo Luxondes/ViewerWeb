@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>drag&drop</title>
+</head>
+<script>
+    function start(e){
+        e.dataTransfer.effectAllowed="move";
+        e.dataTransfer.setData("text", e.target.getAttribute("id"));
+    }
+    function over(e){
+        return false;
+    }
+    function drop(e){
+        ob = e.dataTransfer.getData("text");
+        e.currentTarget.appendChild(document.getElementById(ob));
+        e.stopPropagation();
+        return false;
+    }
+</script>
+
+<body>
+    <div class="divClass" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
+        <img src="images/img1.png" id="1" draggable="true">
+        <img src="images/img2.png" id="2" draggable="true">
+        <img src="images/img3.jpg" id="3" draggable="true">
+    </div>
+    </br>
+    <div class="divClass" onDragStart="start(event)" onDragOver="return over(event)" onDrop="return drop(event)">
+
+    </div>
+</body>
+</html>
