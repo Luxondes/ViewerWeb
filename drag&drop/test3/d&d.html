@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="d&d.css">
+    <title>Drag&Drop</title>
+</head>
+<body>
+    <div id="drop-area">
+        <form class="my-form">
+          <p>Upload an image with the file dialog or by dragging and dropping image onto the dashed region</p>
+          <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+          <label class="button" for="fileElem">Select a file</label>
+        </form>
+        <div id="gallery" /></div>
+      </div>
+      <script src="d&d.js"></script>
+</body>
+</html>
