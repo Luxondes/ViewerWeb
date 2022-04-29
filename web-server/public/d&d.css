@@ -1,0 +1,60 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    color: #ccc;
+  }
+  #drop-area {
+    border: 2px dashed #ccc;
+    border-radius: 20px;
+    width: 480px;
+    margin: 25px 10px auto;
+    padding: 20px;
+    float: left;
+  }
+  #drop-area.highlight {
+    border-color: purple;
+    float: top;
+  }
+  #gallery {
+    margin-top: 10px;
+  }
+  #gallery img {
+    width: 150px;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: rgb(0, 0, 0);
+  }
+  .button:hover {
+    background: #ddd;
+  }
+  #fileElem {
+    display: none;
+  }
+
+  canvas {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+  }
+
+  #menu {
+    float: left;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+
+  #menu:checked  div {
+    box-shadow: 0 0 0 3px orange;
+    color: red;
+  }
+
+  .hidden {
+    display: none;
+  }

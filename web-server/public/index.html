@@ -3,16 +3,28 @@
 	<head>
 		<meta charset="utf-8">
 		<title>My first three.js app</title>
-		<style>
-			body { margin: 0; }
-		</style>
+		<link rel="stylesheet" href="d&d.css">
 	</head>
-	<body>    
+	<body>
+		<input type="checkbox" id="menu">
+		<div id="drop-area">
+			<form class="my-form">
+			  <p>Upload an image with the file dialog or by dragging and dropping image onto the dashed region</p>
+			  <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+			  <label class="button" for="fileElem">Select a file</label>
+			</form>
+			<div id="gallery" />
+			<img src='https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c=s1200' id="img"></div>
+
+			<label class="button" id="add">Use this Image</label>
+		</div>
+		<script src="d&d.js"></script>
 		<script type="importmap">
 			{
 				"imports": { "three": "https://unpkg.com/three/build/three.module.js" }
 			}
 		</script>
         <script type="module" src="myThreeTest.js"></script>	
+		<script type="module" src="image.js"></script>
 	</body>
 </html>
