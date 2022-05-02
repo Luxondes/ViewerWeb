@@ -6,15 +6,15 @@
 		<link rel="stylesheet" href="d&d.css">
 	</head>
 	<body>
+		<form class="drop">
+		  <p>Upload an image with the file dialog or by dragging and dropping image onto the screen</p>
+		  <input type="file" id="fileElem" multiple accept="image/*">
+		  <label class="button" for="fileElem">Select a file</label>
+		</form>
+
 		<div id="drop-area" class="hidden drop">
-			<form class="drop">
-			  <p>Upload an image with the file dialog or by dragging and dropping image onto the dashed region</p>
-			  <input type="file" id="fileElem" multiple accept="image/*">
-			  <label class="button" for="fileElem">Select a file</label>
-			</form>
 			<div id="gallery" class=" drop" />
 			<img src='nuitEtoile.jpg' id="img" class=" drop"></div>
-
 		</div>
 		<script type="importmap">
 			{

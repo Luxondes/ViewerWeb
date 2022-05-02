@@ -25,6 +25,7 @@ body{
 }
 img {
   width: 50px;
+  display: none;
 }
 .button {
   display: inline-block;
