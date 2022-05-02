@@ -1,9 +1,8 @@
+import { main } from './myThreeTest.js';
+
 let dropArea = document.getElementById("drop-area");
-let menu = document.getElementById ("menu");
+let fileElem = document.getElementById ("fileElem");
 let hiddenMenu = false;
-
-
-
 
 
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -17,22 +16,27 @@ let hiddenMenu = false;
 
 ;['dragleave', 'drop'].forEach(eventName => {
   dropArea.addEventListener(eventName, unhighlight, false);
+  dropArea.addEventListener(eventName, hidden);
 })
 
+document.body.addEventListener('dragenter', unhidden);
+dropArea.addEventListener('dragenter', unhidden);
+
+
 dropArea.addEventListener('drop', handleDrop, false);
+fileElem.addEventListener('change', handleDl, false);
 
-menu.addEventListener('click', hidden);
 
-function hidden(){
-  if (!hiddenMenu){
-    dropArea.classList.add('hidden');
-    hiddenMenu = true;
-    console.log('hidden');
-  }else{
+function unhidden(){
     dropArea.classList.remove('hidden');
     hiddenMenu = false;
     console.log('not hidden anymore');
-  }
+}
+
+function hidden(){
+    dropArea.classList.add('hidden');
+    hiddenMenu = true;
+    console.log('hidden');
 }
 
 function preventDefaults (e) {
@@ -48,13 +52,17 @@ function unhighlight(e) {
   dropArea.classList.remove('highlight');
 }
 
+function handleDl(e){
+  let files = this.files;
+  handleFiles(files);
+}
+
 function handleDrop(e) {
   let dt = e.dataTransfer;
   let files = dt.files;
 
   handleFiles(files);
 }
-
 
 
 
@@ -78,6 +86,7 @@ function previewFile(file) {
     
     document.getElementById('gallery').appendChild(img);
     console.log(img.src);
+    main();
   }
 }
 

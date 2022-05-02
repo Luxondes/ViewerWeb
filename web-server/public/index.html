@@ -6,25 +6,22 @@
 		<link rel="stylesheet" href="d&d.css">
 	</head>
 	<body>
-		<input type="checkbox" id="menu">
-		<div id="drop-area">
-			<form class="my-form">
+		<div id="drop-area" class="hidden drop">
+			<form class="drop">
 			  <p>Upload an image with the file dialog or by dragging and dropping image onto the dashed region</p>
-			  <input type="file" id="fileElem" multiple accept="image/*" onchange="handleFiles(this.files)">
+			  <input type="file" id="fileElem" multiple accept="image/*">
 			  <label class="button" for="fileElem">Select a file</label>
 			</form>
-			<div id="gallery" />
-			<img src='https://lh6.ggpht.com/HlgucZ0ylJAfZgusynnUwxNIgIp5htNhShF559x3dRXiuy_UdP3UQVLYW6c=s1200' id="img"></div>
+			<div id="gallery" class=" drop" />
+			<img src='nuitEtoile.jpg' id="img" class=" drop"></div>
 
-			<label class="button" id="add">Use this Image</label>
 		</div>
-		<script src="d&d.js"></script>
 		<script type="importmap">
 			{
 				"imports": { "three": "https://unpkg.com/three/build/three.module.js" }
 			}
 		</script>
+		<script type="module" src="d&d.js"></script>
         <script type="module" src="myThreeTest.js"></script>	
-		<script type="module" src="image.js"></script>
 	</body>
 </html>

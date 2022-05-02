@@ -55,3 +55,9 @@
   - ~/drag&drop
   - https://www.youtube.com/watch?v=aa18QsK5QZI&t=186s
   - https://www.youtube.com/watch?v=6pc9G2ahUuc
+
+### Semaine du 02/05 au 06/05:
+
+- drag & drop system sur plan :
+
+  - ~/web-server
