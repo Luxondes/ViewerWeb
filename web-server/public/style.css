@@ -5,7 +5,7 @@ body{
   height: 100%;
   width: 100%;
 }
-#drop-area {
+#drop-area{
   position: relative;
   border: 2px dashed #ccc;
   border-radius: 20px;
@@ -15,19 +15,13 @@ body{
   bottom: 0;
   right: 0;
 }
-#drop-area.highlight {
-  border-color: purple;
-  float: top;
+#gallery{
+  margin-top: 16px;
 }
-#gallery {
-  margin-top: 10px;
-  margin-bottom: 10px;
+img{
+  width: 50%;
 }
-img {
-  width: 50px;
-  display: none;
-}
-.button {
+.button{
   display: inline-block;
   padding: 10px;
   background: #ccc;
@@ -35,28 +29,32 @@ img {
   border-radius: 5px;
   border: 1px solid #ccc;
   color: rgb(0, 0, 0);
+  user-select: none;
 }
-.button:hover {
+.button:hover{
   background: #ddd;
 }
-#fileElem {
+#fileElem{
   display: none;
 }
-canvas {
+canvas{
   position: absolute;
   left: 0px;
   top: 0px;
   z-index: -1;
 }
-#menu {
+#menu{
   float: left;
   margin-left: 5px;
   margin-top: 5px;
 }
-#menu:checked  div {
-  box-shadow: 0 0 0 3px orange;
-  color: red;
-}
-.hidden {
+.hidden{
   display: none;
+}
+#pannel{
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  float: left;
+  width: 20%;
+  padding: 1%;
 }

@@ -9,9 +9,9 @@ export function main(){
   camera.position.z = 1;
   camera.up.set( 0, 0, 1 );
   
-  
   const renderer = new THREE.WebGLRenderer( { antialias: true } );
   renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.domElement.id = "canvas";
   document.body.appendChild(renderer.domElement);
   
   const controls = new OrbitControls(camera, renderer.domElement);
@@ -28,8 +28,7 @@ export function main(){
   let plane = new THREE.Mesh( geometry, material );
   scene.add( plane );
   
-  
-  
+
   const loop = function() {
     requestAnimationFrame(loop);
     renderer.render(scene, camera);

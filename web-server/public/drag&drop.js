@@ -1,8 +1,12 @@
-import { main } from './myThreeTest.js';
+import { main } from './mythree.js';
 
 let dropArea = document.getElementById("drop-area");
 let fileElem = document.getElementById ("fileElem");
-let hiddenMenu = false;
+let selector = document.getElementById ("selector");
+let sousPannel = document.getElementById ("souspannel");
+let pannel = document.getElementById ("pannel");
+let hiddenSelector = false;
+let hiddenDrop = false;
 
 
 ;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -10,18 +14,14 @@ let hiddenMenu = false;
   document.body.addEventListener(eventName, preventDefaults, false);
 })
 
-;['dragenter', 'dragover'].forEach(eventName => {
-  dropArea.addEventListener(eventName, highlight, false);
-})
-
 ;['dragleave', 'drop'].forEach(eventName => {
-  dropArea.addEventListener(eventName, unhighlight, false);
   dropArea.addEventListener(eventName, hidden);
 })
 
 document.body.addEventListener('dragenter', unhidden);
 dropArea.addEventListener('dragenter', unhidden);
 
+selector.addEventListener('click', hiddenS);
 
 dropArea.addEventListener('drop', handleDrop, false);
 fileElem.addEventListener('change', handleDl, false);
@@ -29,28 +29,33 @@ fileElem.addEventListener('change', handleDl, false);
 
 function unhidden(){
     dropArea.classList.remove('hidden');
-    hiddenMenu = false;
-    console.log('not hidden anymore');
+    hiddenDrop = false;
 }
 
 function hidden(){
     dropArea.classList.add('hidden');
-    hiddenMenu = true;
-    console.log('hidden');
+    hiddenDrop = true;
 }
 
-function preventDefaults (e) {
+function hiddenS(){
+  if (hiddenSelector){
+    sousPannel.classList.remove('hidden');
+    pannel.style.border = "1px solid #ccc";
+    pannel.style.width = "20%";
+    hiddenSelector = false;
+  }else{
+    sousPannel.classList.add('hidden');
+    pannel.style.border = "1px solid rgba(0, 0, 255, 0)";
+    pannel.style.width = "auto";
+    hiddenSelector = true;
+  }
+}
+
+function preventDefaults(e){
   e.preventDefault();
   e.stopPropagation();
 }
 
-function highlight(e) {
-  dropArea.classList.add('highlight');
-}
-
-function unhighlight(e) {
-  dropArea.classList.remove('highlight');
-}
 
 function handleDl(e){
   let files = this.files;
@@ -63,9 +68,6 @@ function handleDrop(e) {
 
   handleFiles(files);
 }
-
-
-
 
 function handleFiles(files) {
   files = [...files];
@@ -86,6 +88,8 @@ function previewFile(file) {
     
     document.getElementById('gallery').appendChild(img);
     console.log(img.src);
+  
+    document.body.removeChild(document.getElementById ("canvas"));
     main();
   }
 }

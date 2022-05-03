@@ -2,26 +2,34 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>My first three.js app</title>
-		<link rel="stylesheet" href="d&d.css">
+		<title>ViewerWeb</title>
+		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<form class="drop">
-		  <p>Upload an image with the file dialog or by dragging and dropping image onto the screen</p>
-		  <input type="file" id="fileElem" multiple accept="image/*">
-		  <label class="button" for="fileElem">Select a file</label>
-		</form>
+		
+		<div id="pannel" >
+			<label class="button" id="selector">File Selector</label>
+			<div id="souspannel">
+				<form>
+					<p>Upload an image with the file dialog or by dragging and dropping image onto the screen</p>
+					<input type="file" id="fileElem" multiple accept="image/*">
+					<label class="button" for="fileElem">Select a file</label>
+				</form>
 
-		<div id="drop-area" class="hidden drop">
-			<div id="gallery" class=" drop" />
-			<img src='nuitEtoile.jpg' id="img" class=" drop"></div>
+				<div id="gallery"/>
+					<img src='nuitEtoile.jpg' id="img" class=" drop">
+				</div>
+			</div>
 		</div>
+
+		<div id="drop-area" class="hidden"></div>
+
 		<script type="importmap">
 			{
 				"imports": { "three": "https://unpkg.com/three/build/three.module.js" }
 			}
 		</script>
-		<script type="module" src="d&d.js"></script>
-        <script type="module" src="myThreeTest.js"></script>	
+		<script type="module" src="drag&drop.js"></script>
+        <script type="module" src="mythree.js"></script>	
 	</body>
 </html>
