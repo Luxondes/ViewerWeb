@@ -1,11 +1,26 @@
 const express = require("express");
 const app = express();
+const cors = require('cors');
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-  next();
+const decompress = require("decompress");
+let files;
+(async () => {
+    try {
+        files = await decompress("public/coub.zip", "public/img");
+        console.log(files);
+    } catch (error) {
+        console.log(error);
+    }
+})();
+
+
+app.use(cors());
+
+app.get('/', function(req, res, next) {
+    res.json({
+      zip: files
+    });
+    next();
   });
 
 app.use(express.static('public'));
