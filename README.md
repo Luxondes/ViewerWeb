@@ -44,6 +44,8 @@
 
   - https://jsfiddle.net/JulienGelles/gv9ob6ep/97/
 
+---
+
 ### Semaine du 25/04 au 29/04:
 
 - Node.js ; serveur local + ajustements :
@@ -56,8 +58,16 @@
   - https://www.youtube.com/watch?v=aa18QsK5QZI&t=186s
   - https://www.youtube.com/watch?v=6pc9G2ahUuc
 
+---
+
 ### Semaine du 02/05 au 06/05:
 
 - drag & drop system sur plan :
 
   - ~/web-server
+
+---
+
+### Semaine du 09/05 au 13/05:
+
+- premiers tests dézippage
