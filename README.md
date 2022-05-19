@@ -1,10 +1,14 @@
 # ViewerWeb
 
-## Avancement :
+Ce dépot contient l'ensemble de mes essais, compte-rendus, références et états d'avancement concernant le Viewer Web 3D.
+
+Il reprend globalement tout les travaux s'articulant autour du second dépot à l'adresse suivante : https://github.com/Luxondes/Viewer-Web-Infomaniak
 
 ---
 
-### Semaine du 11/04 au 15/04: Auto-formation
+## Avancement :
+
+### Semaine 0 du 11/04 au 15/04: Auto-formation
 
 - Javascript :
 
@@ -28,7 +32,7 @@
 
 ---
 
-### Semaine du 19/04 au 22/04:
+### Semaine 1 du 19/04 au 22/04:
 
 - Three.js :
 
@@ -46,11 +50,11 @@
 
 ---
 
-### Semaine du 25/04 au 29/04:
+### Semaine 2 du 25/04 au 29/04:
 
 - Node.js ; serveur local + ajustements :
 
-  - ~/web-server
+  - ../Viewer-Web-Infomaniak
 
 - drag & drop system :
 
@@ -60,14 +64,24 @@
 
 ---
 
-### Semaine du 02/05 au 06/05:
+### Semaine 3 du 02/05 au 06/05:
 
 - drag & drop system sur plan :
 
-  - ~/web-server
+  - ~/drag&drop
+  - ../Viewer-Web-Infomaniak
 
 ---
 
-### Semaine du 09/05 au 13/05:
+### Semaine 4 du 09/05 au 13/05:
 
 - premiers tests dézippage
+
+- ~/dézippage
+-
+-
+-
+-
+-
+
+### Semaine 5 du 16/05 au 20/05:

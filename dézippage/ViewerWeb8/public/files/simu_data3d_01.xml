@@ -1,0 +1,62 @@
+
+<EmissionScan>
+  <Nfs_ver>1.0</Nfs_ver>
+  <Filename>simu_data3d_01</Filename>
+  <File_ver>1.0</File_ver>
+  <Date>14/04/2021</Date>
+  <Source />
+  <Notes>Version apk : 2.4 - 13 avr. 2021</Notes>
+  <Disclaimer>This file saves result of [...]. Others using is not guaranteed.</Disclaimer>
+  <Copyright>LUXONDES</Copyright>
+  <Component>
+    <Name>Simulation</Name>
+    <Manufacturer />
+    <Notes>Simulation</Notes>
+    <Image>
+        <Path></Path>
+        <Unit>mm</Unit>
+        <Xsize>0.0</Xsize>
+        <Ysize>0.0</Ysize>
+        <Xoffset>0.0</Xoffset>
+        <Yoffset>0.0</Yoffset>
+    </Image>
+  </Component>
+  <Setup>
+    <Notes />
+    <Config>
+      <Notes />
+      <Att />
+      <Average />
+      <Ref_Level />
+      <Rbw />
+      <Vbw />
+      <Swp />
+    </Config>
+    <Transducer>
+      <Notes />
+      <Frequencies>
+        <Unit>MHz</Unit>
+        <List>400 600 </List>
+      </Frequencies>
+      <Gain />
+    </Transducer>
+  </Setup>
+  <Data>
+    <Notes />
+    <Coordinates>xyz</Coordinates>
+    <X0>0.0</X0>
+    <Y0>0.0</Y0>
+    <Z0>0.0</Z0>
+    <Frequencies>
+      <Unit>MHz</Unit>
+      <List></List>
+    </Frequencies>
+    <Measurement>
+      <Unit>V</Unit>
+      <Unit_x>mm</Unit_x>
+      <Unit_y>mm</Unit_y>
+      <Unit_z>mm</Unit_z>
+      <Data_files>simu_data3d_brut_01.dat</Data_files>
+    </Measurement>
+  </Data>
+</EmissionScan>
