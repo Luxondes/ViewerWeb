@@ -85,3 +85,8 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 -
 
 ### Semaine 5 du 16/05 au 20/05:
+
+- https://stackoverflow.com/questions/3950029/handle-refresh-page-event-with-javascript
+- https://stackoverflow.com/questions/18052762/remove-directory-which-is-not-empty
+
+- https://stackoverflow.com/questions/65989416/node-express-req-body-returns-empty-obj
