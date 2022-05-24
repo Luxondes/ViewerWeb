@@ -1,0 +1,29 @@
+
+ listelivres
+ {
+ background-color: #ffffff;
+ width: 100%;
+ }
+ livre
+ {
+ display: block;
+ margin-bottom: 30pt;
+ margin-left: 0;
+ }
+ titre
+ {
+ color: #FF0000;
+ font-size: 20pt;
+ }
+ auteur
+ {
+ color: #0000FF;
+ font-size: 20pt;
+ }
+ année,prix
+ {
+ display: block;
+ color: #000000;
+ margin-left: 20pt;
+ }
+ 

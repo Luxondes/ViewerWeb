@@ -90,3 +90,7 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 - https://stackoverflow.com/questions/18052762/remove-directory-which-is-not-empty
 
 - https://stackoverflow.com/questions/65989416/node-express-req-body-returns-empty-obj
+
+### Semaine 6 du 23/05 au 27/05:
+
+- ttps://www.youtube.com/watch?v=0gON4MUdJE8
