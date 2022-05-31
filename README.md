@@ -78,11 +78,7 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 - premiers tests dézippage
 
 - ~/dézippage
--
--
--
--
--
+- ../Viewer-Web-Infomaniak
 
 ### Semaine 5 du 16/05 au 20/05:
 
@@ -93,4 +89,14 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 
 ### Semaine 6 du 23/05 au 27/05:
 
-- ttps://www.youtube.com/watch?v=0gON4MUdJE8
+- https://www.youtube.com/watch?v=0gON4MUdJE8
+-
+-
+-
+-
+
+### Semaine 7 du 30/05 au 03/06:
+
+- https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
+- https://mathjs.org/docs/datatypes/matrices.html
+- https://nodejs.org/api/readline.html#readline_example_read_file_stream_line_by_line

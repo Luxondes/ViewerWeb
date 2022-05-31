@@ -1,0 +1,15 @@
+{
+  "name": "node_xml_parser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "xml_parser.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0",
+    "xml2js": "^0.4.22"
+  }
+}

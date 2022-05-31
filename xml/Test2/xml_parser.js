@@ -4,8 +4,26 @@ const util = require('util');
 
 const parser = new xml2js.Parser();
 
-fs.readFile('emc-interference-freq.xml', (err, data) => {
-	parser.parseString(data, (err, result) => {
-		console.log(util.inspect(result, false, null, true));
-	});
-});
+
+function htmlspecialchars(s){
+	return (typeof s=='string')?s.replace(/\</g,'&lt;')
+								 .replace(/\>/g,'&gt;')
+								 .replace(/&lt;/g,'<pre>&lt;')
+								 .replace(/&gt;/g,'&gt;</pre>')
+								 .replace(/(\n)/gm,'<br>')
+
+								 :'';
+}
+
+
+// fs.readFile('emc-interference-freq.xml', (err, data) => {
+// 	parser.parseString(data, (err, result) => {
+// 		console.log(util.inspect(result));
+// 	});
+// });
+
+
+let data = fs.readFileSync('example.xml', 'utf8');
+data = htmlspecialchars(data)
+console.log(data);
+
