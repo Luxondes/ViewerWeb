@@ -78,7 +78,13 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 - premiers tests dézippage
 
 - ~/dézippage
+- http://techslides.com/demos/archive/archive-viewer.html
+- https://gildas-lormeau.github.io/zip.js/core-api.html
+- https://stuk.github.io/jszip/
+
 - ../Viewer-Web-Infomaniak
+- https://youtu.be/ysS4sL6lLDU
+- https://youtu.be/KP_8gN8kh4Y
 
 ### Semaine 5 du 16/05 au 20/05:
 
@@ -100,3 +106,8 @@ Il reprend globalement tout les travaux s'articulant autour du second dépot à 
 - https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Array
 - https://mathjs.org/docs/datatypes/matrices.html
 - https://nodejs.org/api/readline.html#readline_example_read_file_stream_line_by_line
+
+### Semaine 8 du 07/06 au 10/06:
+
+- https://codepen.io/opyate/pen/pbLboQ
+- https://stackoverflow.com/questions/30245990/how-to-merge-two-geometries-or-meshes-using-three-js-r71

@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const data = fs.readFileSync('simu.dat', 'utf8');
+const data = fs.readFileSync('test.dat', 'utf8');
 
 let lines = data.split('\r\n')
 
