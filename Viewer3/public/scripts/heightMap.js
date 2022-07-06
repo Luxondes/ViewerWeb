@@ -3,12 +3,12 @@ import { OrbitControls } from '../lib/OrbitControls.js';
 // import * as HMC from './heightMapCanvas.js';
 
 export function main(){
-  
+
   let canvasG = document.getElementById("heightgrd");
   let colorTexture = new THREE.CanvasTexture(canvasG);
   let ctxG = canvasG.getContext("2d");
 
-  let mires = []; 
+  let mires = [];
   for (let i = 1; i < 8; i++) {
     let img = new Image();
     img.src = "../img/mir_0" + i + ".jpg";
@@ -19,18 +19,18 @@ export function main(){
   window.addEventListener("load", ()=>{
     createGradMap();
   }, false);
-  
+
   createGradMap();
   function createGradMap() {
     mires_index = 0;
     ctxG.drawImage(mires[mires_index], 0, 0, 64, 256);
     colorTexture.needsUpdate = true;
   }
-  
+
   canvasG.addEventListener("click", ()=>{
     updateGradMap();
   }, false);
-  
+
   function updateGradMap() {
     mires_index = (mires_index + 1) % 7;
     ctxG.clearRect(0, 0, 64, 256);
@@ -64,7 +64,7 @@ export function main(){
 
   const ysize = document.getElementById("Ysize");
   let ysizehtml = ysize.innerHTML;
-  
+
   let geometry = new THREE.PlaneGeometry( 50, ysizehtml/xsizehtml*50 );
   let texture = new THREE.TextureLoader().load( imageSrc );
   let material = new THREE.MeshBasicMaterial( { map: texture , side: THREE.DoubleSide} );
@@ -75,13 +75,15 @@ export function main(){
 
   window.addEventListener( 'resize', onWindowResize, false );
 
-  let g = new THREE.PlaneBufferGeometry(50, 50, 10, 10);
-  g.rotateX(-Math.PI * 0.5);
-  
+
+
   let uniforms = {
     colorTexture: {value: colorTexture}
   }
-  let m = new THREE.MeshBasicMaterial({
+
+
+
+  let meshBasic = new THREE.MeshBasicMaterial({
     side: THREE.DoubleSide,
     onBeforeCompile: shader => {
       shader.uniforms.colorTexture = uniforms.colorTexture;
@@ -97,7 +99,7 @@ export function main(){
       shader.fragmentShader = `
       uniform float limits;
       uniform sampler2D colorTexture;
-        
+
         varying vec3 vPos;
         ${shader.fragmentShader}
       `.replace(
@@ -109,22 +111,104 @@ export function main(){
         );
       }
     })
-    
-    let o = new THREE.Mesh(g, m);
-    scene.add(o);
-    
-    setRandHeight();
-    function setRandHeight(){
-      let pos = g.attributes.position;
-      let uv = g.attributes.uv;
-      for (let i = 0; i < 121; i++) {
+
+
+
+    const datstr = document.getElementById("dat");
+    let dathtml = datstr.innerHTML;
+
+    if (dathtml) {
+        let lines = dathtml.trim().split('\n')
+
+        for (let i = 0; i < lines.length; i++) {
+          lines[i] = lines[i].split('\t');
+          for (let j = 0; j < lines[i].length; j++) {
+            lines[i][j] = parseFloat(lines[i][j]);
+          }
+        }
+
+        let dataMmin = lines[0][3];
+        let dataMmax = lines[0][3];
+        let dataXmax = lines[0][0];
+        let dataXmin = lines[0][0];
+        let dataYmax = lines[0][1];
+        let dataYmin = lines[0][1];
+        let x=lines[0][0];
+        let y=lines[0][1];
+        let z=lines[0][2];
+        let dif=0;
+        let step=Number.MAX_SAFE_INTEGER;
+        // console.log("step : " + step);
+
+        for (let index = 0; index < lines.length; index++) {
+          for (let indexColumn = 3; indexColumn < lines[0].length; indexColumn++) {
+            dataMmin = Math.min(lines[index][indexColumn],dataMmin);
+            dataMmax = Math.max(lines[index][indexColumn],dataMmax);
+          }
+
+          dif = Math.abs(x - lines[index][0]);
+          if (dif > 0) {
+            step = Math.min(step, dif);
+          }
+          dif = Math.abs(y - lines[index][1]);
+          if (dif > 0) {
+            step = Math.min(step, dif);
+          }
+          dif = Math.abs(z - lines[index][2]);
+          if (dif > 0) {
+            step = Math.min(step, dif);
+          }
+          x = lines[index][0];
+          y = lines[index][1];
+          z = lines[index][2];
+
+          dataXmin = Math.min(lines[index][0],dataXmin);
+          dataYmin = Math.min(lines[index][1],dataYmin);
+          dataXmax = Math.max(lines[index][0],dataXmax);
+          dataYmax = Math.max(lines[index][1],dataYmax);
+        }
+        let numberX=Math.floor((Math.abs(dataXmax - dataXmin) / step) + 1);
+        let numberY=Math.floor((Math.abs(dataYmax - dataYmin) / step) + 1);
+        step=Math.round(step);
+
+
+        let planeHeightmap = new THREE.PlaneBufferGeometry(numberX, numberY, numberX-1, numberY-1);
+        // console.log("numberX : " + numberX);
+        // console.log("numberY : " + numberY);
+        // console.log("step : " + step);
+        planeHeightmap.rotateX(-Math.PI * 0.5);
+        let o = new THREE.Mesh(planeHeightmap, meshBasic);
+        scene.add(o);
+        let pos = planeHeightmap.attributes.position;
+        let uv = planeHeightmap.attributes.uv;
+        // console.log("lines : " + lines.length);
+        // console.log("planeHeightmap.attributes.position : " + pos.count);
+        let indexPos=0;
+        let index=0;
+        for ( x = 0; x < numberX; x++) {
+          for (y = 0; y < numberY; y++) {
+            indexPos=x+y*numberX;
+            pos.setY(indexPos,(lines[index][3]-dataMmin)/(dataMmax-dataMmin));
+            index = index + 1 ;
+          }
+        }
+        pos.needsUpdate = true;
+    }
+    else{
+      let planeHeightmap = new THREE.PlaneBufferGeometry(50, 50, 10, 10);
+      planeHeightmap.rotateX(-Math.PI * 0.5);
+      let o = new THREE.Mesh(planeHeightmap, meshBasic);
+      scene.add(o);
+      let pos = planeHeightmap.attributes.position;
+      let uv = planeHeightmap.attributes.uv;
+      for (let i = 0; i < pos.count; i++) {
         let uvX = uv.getX(i);
         let uvY = uv.getY(i);
+        // pos.setY(i,uvY)
         pos.setY(i, noise.simplex3(uvX, uvY, 0)*1.5);
       }
       pos.needsUpdate = true;
     }
-
   if (document.getElementById ("stat")) {
     document.body.removeChild(document.getElementById ("stat"));
   }
@@ -152,15 +236,15 @@ export function main(){
   stats3.domElement.id = "stat3";
   document.body.appendChild( stats3.dom );
 
-  
+
   renderer.setAnimationLoop(()=>{
     renderer.render(scene, camera);
     stats.update()
     stats2.update()
     stats3.update()
   })
-  
-  
+
+
   function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
