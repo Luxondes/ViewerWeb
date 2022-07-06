@@ -149,7 +149,6 @@ function handleFiles(files) {
                     document.getElementById("Ysize").innerHTML = xmlDoc.getElementsByTagName("Ysize")[0].childNodes[0].nodeValue;
                 }
                 document.body.removeChild(document.getElementById ("canvas"));
-                main();
 
                 while (document.getElementById("container").firstElementChild){
                   document.getElementById("container").removeChild(list.firstElementChild);                  
@@ -185,6 +184,7 @@ function handleFiles(files) {
                 {
                   let datTexte = json.texte;
                   document.getElementById("dat").innerHTML = datTexte;
+                  main();
                 })
                 .catch((err) => ("Submit Error", err)); // retour d'erreur
               break;
